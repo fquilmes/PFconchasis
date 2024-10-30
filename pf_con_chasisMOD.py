@@ -94,10 +94,10 @@ def main():
         cropped_dicom = crop_dicom(file_path)
         if cropped_dicom:
             # Especificar el directorio de salida
-            output_dir = directory
+            output_dir = rf"\\10.130.1.253\FisicaQuilmes\_Datos\0_ QA Equipos\0_ Picket Fence"
             # Luego modificar el archivo recortado y guardarlo en el directorio especificado
             CR2DCM_v2(cropped_dicom, output_dir, original_filename)
-            messagebox.showinfo("Éxito", f"Archivo DICOM modificado guardado en {directory}")
+            messagebox.showinfo("Éxito", f"Archivo DICOM modificado guardado en {output_dir}")
 
 
 if __name__ == "__main__":
