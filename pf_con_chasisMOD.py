@@ -86,9 +86,14 @@ def get_resource_path():
 
 def main():
     # Primero recortar la imagen
+    initial_dir = rf"\\10.130.1.253\FisicaQuilmes\_Datos\0_ QA Equipos\0_ Picket Fence"
     root = tk.Tk()
     root.withdraw()
-    file_path = filedialog.askopenfilename(filetypes=[('DICOM Files', '*.dcm')])
+    file_path = filedialog.askopenfilename(
+        initialdir=initial_dir,
+        title="Seleccione un archivo DICOM",
+        filetypes=[('DICOM Files', '*.dcm')]
+    )
     if file_path:
         directory, original_filename = os.path.split(file_path)
         cropped_dicom = crop_dicom(file_path)
